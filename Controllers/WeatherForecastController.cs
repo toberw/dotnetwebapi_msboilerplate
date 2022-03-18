@@ -4,7 +4,7 @@ namespace webAPI.Controllers;
 
 // indicates that this is going to use default behaviors to define an api and the routing patter for the webapi
 [ApiController]
-[Route("[controller]")] // should be replaced with the name of the controller 
+[Route("[controller]")] // indicates this is the route for the controller 
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -12,7 +12,7 @@ public class WeatherForecastController : ControllerBase
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<WeatherForecastController> _logger; 
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {

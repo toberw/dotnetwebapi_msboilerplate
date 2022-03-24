@@ -1,12 +1,40 @@
-# DotNet Web Api Boilerplate
-This was created by following the "build-web-api-aspnet-core" exercise from Microsoft. This is a personal reference, so it will include notations to things that aren't immediately apprarent to me.
+# Task Management Application
+Basic RESTful API supporting CRUD functionality that allows users to manage lists with different tasks attached to them. This is going to be made entirely using ASP.net 
 
-# DotNet gitignore file
-I couldn't find an option on GitHub for a default dotnet git ignore file. I opted to use the one provided by .net 6 sdk.
+
+## Database Plan & Setup
+[DBDiagram](https://dbdiagram.io) was used to plot out my database structure. Below is the various tables to be used in this project, and their relationships with eachother.
+After creating database use the file [msbp_mysql.sql](./msbp_mysql.sql) to create tables shown below.
+
 ```
-dotnet new gitignore
+Table users as U {
+  id int [pk, increment] // auto-increment
+  username varchar
+  password varchar
+  full_name varchar
+  created_at timestamp
+  country_code int
+}
+
+Table task_list {
+  id int [pk, increment]
+  user_id int [ref: > users.id]
+  created_at timestamp
+  value varchar
+  description varchar
+}
+
+Table task_items {
+  id int [pk, increment]
+  list_id int [ref: > task_list.id]
+  task varchar
+}
+
+Table task_comment {
+  id int [pk, increment]
+  user_id int [ref: > users.id]
+  item_id int [ref: > task_items.id]
+  value varchar
+}
 ```
 
-[Link to Microsoft Exercise Module](https://docs.microsoft.com/en-us/learn/modules/build-web-api-aspnet-core/)
-
-*I hope that I or someone else finds these notes useful.*

@@ -1,10 +1,9 @@
 # Task Management Application
-Basic RESTful API supporting CRUD functionality that allows users to manage lists with different tasks attached to them. This is going to be made entirely using ASP.net 
-
+RESTful API made with C# using ASP.NET Core that connects to an existing database. I planned out the existing database and following documentation to reverse engineer it [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding?tabs=dotnet-core-cli)
 
 ## Database Plan & Setup
 [DBDiagram](https://dbdiagram.io) was used to plot out my database structure. Below is the various tables to be used in this project, and their relationships with eachother.
-After creating database use the file [msbp_mysql.sql](./msbp_mysql.sql) to create tables shown below.
+After creating database use the file [msbp_mysql.sql](./msbp_mysql.sql) to create tables shown below. 
 
 ```
 Table users as U {
